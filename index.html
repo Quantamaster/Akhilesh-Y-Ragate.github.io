@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhilesh Y Ragate - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-900 text-gray-200;
+        }
+        /* Custom scroll-behavior for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Style for active navigation link (optional, can be added with JS) */
+        .nav-link.active {
+            @apply text-teal-400 border-b-2 border-teal-400;
+        }
+        /* Custom styles for hover effects on cards */
+        .card-hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header/Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-95 shadow-lg py-4 px-6 md:px-12">
+        <nav class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <a href="#about" class="text-2xl font-bold text-teal-400 mb-3 md:mb-0">Akhilesh Y Ragate</a>
+            <ul class="flex space-x-6">
+                <li><a href="#about" class="nav-link text-lg hover:text-teal-400 transition duration-300">About</a></li>
+                <li><a href="#experience" class="nav-link text-lg hover:text-teal-400 transition duration-300">Experience</a></li>
+                <li><a href="#education" class="nav-link text-lg hover:text-teal-400 transition duration-300">Education</a></li>
+                <li><a href="#skills" class="nav-link text-lg hover:text-teal-400 transition duration-300">Skills</a></li>
+                <li><a href="#projects" class="nav-link text-lg hover:text-teal-400 transition duration-300">Projects</a></li>
+                <li><a href="#contact" class="nav-link text-lg hover:text-teal-400 transition duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 md:px-12 pt-28 pb-16">
+        <!-- About Me Section -->
+        <section id="about" class="mb-20">
+            <h2 class="text-4xl font-bold text-teal-400 mb-8 text-center">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <!-- Updated image source: Ensure 'Akhilesh Photo..jpg' is in the same directory as index.html -->
+                    <img src="Akhilesh Photo..jpg" alt="Akhilesh Y Ragate Photo" class="rounded-full shadow-lg border-4 border-gray-700 mx-auto md:mx-0 w-48 h-48 md:w-64 md:h-64 object-cover">
+                </div>
+                <div class="md:w-2/3 text-lg leading-relaxed text-gray-300">
+                    <p class="mb-4">
+                        Hello! I'm <span class="font-semibold text-teal-300">Akhilesh Y Ragate</span>, currently living in Bangalore and looking forward to contributing to the software field in reputed companies.
+                    </p>
+                    <p class="mb-4">
+                        I am a recent graduate with a Bachelor of Engineering in Computer Science (CSE) specializing in Artificial Intelligence & Machine Learning (AI ML). My academic journey has equipped me with strong programming skills and a solid understanding of various technologies and developer tools.
+                    </p>
+                    <p class="mb-4">
+                        I have hands-on experience through internships in AI&ML, working on projects like IPL data analysis and brain tumor detection using computer vision. I am passionate about leveraging machine learning and AI to solve real-world problems.
+                    </p>
+                    <p>
+                        Outside of my professional pursuits, I enjoy playing and watching Cricket, playing Chess, playing and watching Football, and listening to music.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="mb-20">
+            <h2 class="text-4xl font-bold text-teal-400 mb-8 text-center">Experience</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Experience Item 1: Tech Fortune Technologies -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl card-hover-effect">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Internship Program</h3>
+                    <p class="text-teal-300 mb-1">Tech Fortune Technologies | Bangalore</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Worked on a project titled "IPL data analysis using ML" to predict scores and batsman runs in IPL cricket matches using machine algorithms and Python.</li>
+                        <li>Gained experience working with Google Colab and implementing Python in projects.</li>
+                    </ul>
+                </div>
+                <!-- Experience Item 2: TakeitSmart Upskill Intern -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl card-hover-effect">
+                    <h3 class="text-2xl font-semibold text-white mb-2">AI&ML Internship</h3>
+                    <p class="text-teal-300 mb-1">TakeitSmart Upskill Intern | Bangalore</p>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2">
+                        <li>Built a software titled "Catch Before it's Late" using Computer Vision (Transfer Learning and Machine Learning) to detect brain tumors.</li>
+                        <li>Learned about Raspberry Pi Imager model in innovative projects, implementation in Thonny IDE (Python), and enhanced applications.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="mb-20">
+            <h2 class="text-4xl font-bold text-teal-400 mb-8 text-center">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Education Item 1: Don Bosco Institute Of Technology -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl card-hover-effect">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Bachelor of Engineering in Computer Science (CSE)</h3>
+                    <p class="text-teal-300 mb-1">Don Bosco Institute Of Technology | Bangalore</p>
+                    <p class="text-gray-300">Specialization in Artificial Intelligence & Machine Learning (AI ML).</p>
+                    <p class="text-gray-300">Obtained CGPA: 8.5, Graduation: 2024.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-20">
+            <h2 class="text-4xl font-bold text-teal-400 mb-8 text-center">Skills</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Python</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">C</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">C++</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">SQL</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Java</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">JavaScript</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Windows</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Google Cloud Platform (colab)</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Kaggle</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Linux</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">PyCharm</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">VS Code</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Oracle Database</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Jupyter Notebook</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Code Blocks</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Android Studio</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Apache NetBeans</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">GeminiAI</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">GenAI</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">PowerBI</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">FastAPI</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Google AI Studio</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Scikit-Learn</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">OpenCV</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">TensorFlow</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Keras</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Deep Learning</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">Web-Development</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">AI ML</span>
+                <span class="bg-gray-700 text-teal-300 px-4 py-2 rounded-full text-lg font-medium shadow-md">OOPS</span>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-20">
+            <h2 class="text-4xl font-bold text-teal-400 mb-8 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Item 1: Missile Guidance System -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl card-hover-effect">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Missile Guidance System</h3>
+                    <p class="text-teal-300 mb-3">Digital Image Processing, Computer Vision, Neural Networks</p>
+                    <p class="text-gray-300 mb-4">Implemented missile detection on a static image using Artificial Neural Networks (ANN) along with YOLO and COCO configuration in Python.</p>
+                </div>
+                <!-- Project Item 2: Exam Preparation App -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl card-hover-effect">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Exam Preparation App</h3>
+                    <p class="text-teal-300 mb-3">Android Application Development</p>
+                    <p class="text-gray-300 mb-4">Developed a strategy-based exam preparation app with subject-wise preparation methods and testing methods to reduce inaccuracy by computerized scheduling.</p>
+                </div>
+                <!-- Project Item 3: Online Voting System -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl card-hover-effect">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Online Voting System</h3>
+                    <p class="text-teal-300 mb-3">Database Management Systems (PHP, SQL)</p>
+                    <p class="text-gray-300 mb-4">Implemented a system to vote for a candidate from a list, elect, or determine results using PHP as the front-end and SQL as the back-end.</p>
+                </div>
+                <!-- Project Item 4: Stock Price Predictor -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl card-hover-effect">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Stock Price Predictor</h3>
+                    <p class="text-teal-300 mb-3">Machine Learning (SVM, Random Forest, Logistic Regression)</p>
+                    <p class="text-gray-300 mb-4">Developed a financial data predictor program using technical analysis (past price, volume) and machine learning techniques. Utilizes historical stock price datasets for training.</p>
+                </div>
+                <!-- Project Item 5: Kidney Stone Detection (MAIN PROJECT) -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl card-hover-effect">
+                    <h3 class="text-2xl font-semibold text-white mb-2">Kidney Stone Detection</h3>
+                    <p class="text-teal-300 mb-3">Artificial Machine Intelligence Learning (Tensorflow, Keras, CNN Neural network)</p>
+                    <p class="text-gray-300 mb-4">A project utilizing neural networks to detect kidney stones ranging from 5mm to 10 inches in diameter.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-20">
+            <h2 class="text-4xl font-bold text-teal-400 mb-8 text-center">Contact Me</h2>
+            <div class="bg-gray-800 p-8 rounded-lg shadow-xl max-w-2xl mx-auto">
+                <p class="text-gray-300 text-lg mb-6 text-center">
+                    I'm always open to new opportunities and collaborations. Feel free to reach out!
+                </p>
+                <div class="flex flex-col items-center space-y-4">
+                    <a href="mailto:akhileshragate@gmail.com" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full text-lg transition duration-300 shadow-lg">
+                        Email Me: akhileshragate@gmail.com
+                    </a>
+                    <a href="https://linkedin.com/in/akhilesh-y-ragate-a80460242" target="_blank" class="text-teal-400 hover:underline text-lg">
+                        LinkedIn: linkedin.com/in/akhilesh-y-ragate-a80460242
+                    </a>
+                    <!-- You can add your phone number here if you wish, but it's often omitted for public portfolios -->
+                    <!-- <p class="text-gray-300 text-lg">Phone: 9686197113</p> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Akhilesh Y Ragate. All rights reserved.</p>
+        <p>Built with <span class="text-red-500">&hearts;</span> and Tailwind CSS.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Optional: Highlight active navigation link based on scroll position
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100; // Offset for fixed header
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.href.includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
