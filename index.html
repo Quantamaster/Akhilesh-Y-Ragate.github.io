@@ -38,18 +38,24 @@
             border: 1px solid rgba(148, 163, 184, 0.1);
         }
 
-        /* Animated profile image */
-        .profile-img {
+        /* FIXED: Profile image container and styling */
+        .profile-img-container {
             position: relative;
+            width: 16rem;  /* 256px */
+            height: 16rem; /* 256px */
+            margin: 0 auto;
             animation: float 6s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        @media (min-width: 768px) {
+            .profile-img-container {
+                width: 20rem;  /* 320px */
+                height: 20rem; /* 320px */
+                margin: 0;
+            }
         }
 
-        .profile-img::before {
+        .profile-img-container::before {
             content: '';
             position: absolute;
             inset: -4px;
@@ -64,6 +70,29 @@
         @keyframes gradientRotate {
             0% { background-position: 0% 50%; }
             100% { background-position: 100% 50%; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Profile image - CRITICAL FIX */
+        .profile-img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;  /* This clips the image to circle */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* Change to 'contain' if you want full image */
+            object-position: center; /* Adjust to: center top, center bottom, etc. */
+            display: block;
         }
 
         /* Card hover effects */
@@ -99,6 +128,26 @@
         .skill-badge {
             transition: all 0.3s ease;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-badge::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(20, 184, 166, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s, height 0.4s;
+        }
+
+        .skill-badge:hover::before {
+            width: 200px;
+            height: 200px;
         }
 
         .skill-badge:hover {
@@ -161,35 +210,6 @@
             50% { box-shadow: 0 0 0 20px rgba(20, 184, 166, 0); }
         }
 
-        /* Timeline connector */
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #14b8a6, #06b6d4);
-        }
-
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         /* Glow effect */
         .glow {
             box-shadow: 0 0 20px rgba(20, 184, 166, 0.5);
@@ -203,6 +223,14 @@
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #14b8a6, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     </style>
 </head>
@@ -251,13 +279,17 @@
     <main class="container mx-auto px-6 md:px-12 pt-28 pb-16 relative z-10">
         <!-- About Me Section -->
         <section id="about" class="mb-20 fade-in">
-            <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-12 text-center">About Me</h2>
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">About Me</h2>
             <div class="flex flex-col md:flex-row items-center md:space-x-12">
-                <div class="md:w-1/3 mb-8 md:mb-0 relative">
-                    <div class="profile-img">
-                        <img src="15254.jpg" alt="Akhilesh Y Ragate" class="rounded-full shadow-2xl mx-auto md:mx-0 w-64 h-64 object-cover">
+                <!-- FIXED PROFILE IMAGE -->
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <div class="profile-img-container">
+                        <div class="profile-img">
+                            <img src="15254.jpg" alt="Akhilesh Y Ragate" loading="lazy">
+                        </div>
                     </div>
                 </div>
+
                 <div class="glass p-8 rounded-2xl shadow-2xl card-3d md:w-2/3">
                     <p class="text-gray-300 mb-4 leading-relaxed">
                         Hello! I'm <span class="text-teal-400 font-semibold">Akhilesh Y Ragate</span>, currently living in Bangalore and looking forward to contributing to the software field in reputed companies.
@@ -277,11 +309,11 @@
 
         <!-- Experience Section -->
         <section id="experience" class="mb-20 fade-in">
-            <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-12 text-center">Experience</h2>
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Experience</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="glass p-8 rounded-2xl shadow-2xl card-3d group">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
@@ -298,7 +330,7 @@
                 </div>
                 <div class="glass p-8 rounded-2xl shadow-2xl card-3d group">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center mr-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
                             </svg>
@@ -319,7 +351,7 @@
 
         <!-- Education Section -->
         <section id="education" class="mb-20 fade-in">
-            <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-12 text-center">Education</h2>
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Education</h2>
             <div class="max-w-3xl mx-auto">
                 <div class="glass p-8 rounded-2xl shadow-2xl card-3d">
                     <div class="flex items-start">
@@ -333,8 +365,8 @@
                             <h3 class="text-2xl font-bold text-white mb-2">Bachelor of Engineering in Computer Science (CSE)</h3>
                             <p class="text-teal-300 mb-2 font-semibold">Don Bosco Institute Of Technology | Bangalore</p>
                             <p class="text-gray-300 mb-1">Specialization in Artificial Intelligence & Machine Learning (AI ML)</p>
-                            <div class="flex items-center mt-3">
-                                <span class="bg-teal-500 text-white px-4 py-1 rounded-full text-sm font-semibold mr-3">CGPA: 8.5</span>
+                            <div class="flex items-center mt-3 flex-wrap gap-3">
+                                <span class="bg-teal-500 text-white px-4 py-1 rounded-full text-sm font-semibold">CGPA: 8.5</span>
                                 <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">Graduation: 2024</span>
                             </div>
                         </div>
@@ -345,7 +377,7 @@
 
         <!-- Skills Section -->
         <section id="skills" class="mb-20 fade-in">
-            <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-12 text-center">Skills</h2>
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Skills</h2>
             <div class="flex flex-wrap justify-center gap-4">
                 <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-teal-300 glow">Python</span>
                 <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-blue-300 glow">C</span>
@@ -378,9 +410,9 @@
 
         <!-- Projects Section -->
         <section id="projects" class="mb-20 fade-in">
-            <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-12 text-center">Academic Projects</h2>
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Academic Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer project-card" data-project="missile">
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
                     <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -390,7 +422,7 @@
                     <p class="text-teal-300 mb-3 text-sm font-semibold">Digital Image Processing, Computer Vision, Neural Networks</p>
                     <p class="text-gray-300">Implemented missile detection using ANN with YOLO and COCO configuration in Python.</p>
                 </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer project-card" data-project="exam">
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
                     <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-500 rounded-full flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
@@ -400,7 +432,7 @@
                     <p class="text-blue-300 mb-3 text-sm font-semibold">Android Application Development</p>
                     <p class="text-gray-300">Strategy-based exam prep app with subject-wise methods and computerized scheduling.</p>
                 </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer project-card" data-project="voting">
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
                     <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -410,7 +442,7 @@
                     <p class="text-purple-300 mb-3 text-sm font-semibold">Database Management Systems (PHP, SQL)</p>
                     <p class="text-gray-300">Voting system using PHP frontend and SQL backend for candidate election.</p>
                 </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer project-card" data-project="stock">
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
                     <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
@@ -420,7 +452,7 @@
                     <p class="text-teal-300 mb-3 text-sm font-semibold">Machine Learning (SVM, Random Forest, Logistic Regression)</p>
                     <p class="text-gray-300">Financial predictor using technical analysis and ML techniques on historical data.</p>
                 </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer project-card" data-project="kidney">
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
                     <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
@@ -435,7 +467,7 @@
 
         <!-- Contact Section -->
         <section id="contact" class="mb-20 fade-in">
-            <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 mb-12 text-center">Contact Me</h2>
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Contact Me</h2>
             <div class="glass p-10 rounded-2xl shadow-2xl max-w-3xl mx-auto">
                 <p class="text-gray-300 text-xl mb-8 text-center leading-relaxed">
                     I'm always open to new opportunities and collaborations. Feel free to reach out!
