@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akhilesh Y Ragate - Portfolio</title>
+    <title>Akhilesh Y Ragate - AI/ML & GenAI Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +15,8 @@
             color: #e2e8f0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
-        /* Animated gradient background */
         .gradient-bg {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             background-size: 200% 200%;
@@ -31,28 +28,22 @@
             50% { background-position: 100% 50%; }
         }
 
-        /* Glassmorphism effect */
         .glass {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(148, 163, 184, 0.1);
         }
 
-        /* FIXED: Profile image container and styling */
         .profile-img-container {
             position: relative;
-            width: 16rem;  /* 256px */
-            height: 16rem; /* 256px */
+            width: 16rem;
+            height: 16rem;
             margin: 0 auto;
             animation: float 6s ease-in-out infinite;
         }
 
         @media (min-width: 768px) {
-            .profile-img-container {
-                width: 20rem;  /* 320px */
-                height: 20rem; /* 320px */
-                margin: 0;
-            }
+            .profile-img-container { width: 20rem; height: 20rem; margin: 0; }
         }
 
         .profile-img-container::before {
@@ -77,25 +68,23 @@
             50% { transform: translateY(-20px); }
         }
 
-        /* Profile image - CRITICAL FIX */
         .profile-img {
             position: relative;
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            overflow: hidden;  /* This clips the image to circle */
+            overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
         .profile-img img {
             width: 100%;
             height: 100%;
-            object-fit: cover;  /* Change to 'contain' if you want full image */
-            object-position: center; /* Adjust to: center top, center bottom, etc. */
+            object-fit: cover;
+            object-position: center;
             display: block;
         }
 
-        /* Card hover effects */
         .card-3d {
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
             transform-style: preserve-3d;
@@ -106,7 +95,6 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
-        /* Typewriter effect */
         .typewriter {
             overflow: hidden;
             border-right: 3px solid #14b8a6;
@@ -114,17 +102,9 @@
             animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
         }
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        @keyframes blink-caret { from, to { border-color: transparent; } 50% { border-color: #14b8a6; } }
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent; }
-            50% { border-color: #14b8a6; }
-        }
-
-        /* Skill badge animations */
         .skill-badge {
             transition: all 0.3s ease;
             cursor: pointer;
@@ -145,47 +125,31 @@
             transition: width 0.4s, height 0.4s;
         }
 
-        .skill-badge:hover::before {
-            width: 200px;
-            height: 200px;
-        }
+        .skill-badge:hover::before { width: 200px; height: 200px; }
+        .skill-badge:hover { transform: scale(1.1); box-shadow: 0 8px 16px rgba(20, 184, 166, 0.4); }
 
-        .skill-badge:hover {
-            transform: scale(1.15) rotate(5deg);
-            box-shadow: 0 8px 16px rgba(20, 184, 166, 0.4);
-        }
-
-        /* Scroll reveal animation */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Navigation sticky effect */
         .nav-sticky {
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
 
-        /* Progress bar */
         .progress-bar {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             height: 4px;
             background: linear-gradient(to right, #14b8a6, #06b6d4, #3b82f6);
             z-index: 9999;
             transition: width 0.2s ease;
         }
 
-        /* Particle background */
         .particle {
             position: absolute;
             border-radius: 50%;
@@ -200,88 +164,57 @@
             100% { transform: translate(100px, -100px); opacity: 0; }
         }
 
-        /* Button pulse effect */
-        .btn-pulse {
-            animation: pulse 2s infinite;
-        }
-
+        .btn-pulse { animation: pulse 2s infinite; }
         @keyframes pulse {
             0%, 100% { box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.7); }
             50% { box-shadow: 0 0 0 20px rgba(20, 184, 166, 0); }
         }
 
-        /* Glow effect */
-        .glow {
-            box-shadow: 0 0 20px rgba(20, 184, 166, 0.5);
-        }
+        .glow { box-shadow: 0 0 20px rgba(20, 184, 166, 0.5); }
 
-        /* Icon bounce */
-        .icon-bounce {
-            animation: bounce 2s infinite;
-        }
+        .icon-bounce { animation: bounce 2s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Gradient text */
         .gradient-text {
             background: linear-gradient(135deg, #14b8a6, #06b6d4, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
+        .metric-chip {
+            background: rgba(20, 184, 166, 0.12);
+            border: 1px solid rgba(20, 184, 166, 0.35);
+        }
     </style>
 </head>
 <body class="antialiased gradient-bg relative overflow-x-hidden">
-    <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
-
-    <!-- Particle Background -->
     <div id="particleContainer" class="fixed inset-0 pointer-events-none z-0"></div>
 
-    <!-- Header/Navigation -->
     <header class="nav-sticky fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-12">
         <nav class="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <a href="#about" class="text-2xl font-bold text-teal-400 mb-3 md:mb-0 hover:scale-110 transition-transform">
                 <span class="typewriter inline-block">Akhilesh Y Ragate</span>
             </a>
-            <ul class="flex space-x-6">
-                <li><a href="#about" class="nav-link text-lg hover:text-teal-300 transition duration-300 relative group">
-                    About
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span>
-                </a></li>
-                <li><a href="#experience" class="nav-link text-lg hover:text-teal-300 transition duration-300 relative group">
-                    Experience
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span>
-                </a></li>
-                <li><a href="#education" class="nav-link text-lg hover:text-teal-300 transition duration-300 relative group">
-                    Education
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span>
-                </a></li>
-                <li><a href="#skills" class="nav-link text-lg hover:text-teal-300 transition duration-300 relative group">
-                    Skills
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span>
-                </a></li>
-                <li><a href="#projects" class="nav-link text-lg hover:text-teal-300 transition duration-300 relative group">
-                    Projects
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span>
-                </a></li>
-                <li><a href="#contact" class="nav-link text-lg hover:text-teal-300 transition duration-300 relative group">
-                    Contact
-                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span>
-                </a></li>
+            <ul class="flex flex-wrap justify-center space-x-4 md:space-x-6 text-sm md:text-base">
+                <li><a href="#about" class="nav-link hover:text-teal-300 transition duration-300 relative group">About<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span></a></li>
+                <li><a href="#experience" class="nav-link hover:text-teal-300 transition duration-300 relative group">Experience<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span></a></li>
+                <li><a href="#skills" class="nav-link hover:text-teal-300 transition duration-300 relative group">Skills<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span></a></li>
+                <li><a href="#projects" class="nav-link hover:text-teal-300 transition duration-300 relative group">Projects<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span></a></li>
+                <li><a href="#education" class="nav-link hover:text-teal-300 transition duration-300 relative group">Education<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span></a></li>
+                <li><a href="#contact" class="nav-link hover:text-teal-300 transition duration-300 relative group">Contact<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-teal-400 group-hover:w-full transition-all duration-300"></span></a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container mx-auto px-6 md:px-12 pt-28 pb-16 relative z-10">
-        <!-- About Me Section -->
+    <main class="container mx-auto px-6 md:px-12 pt-32 pb-16 relative z-10">
+
+        <!-- About -->
         <section id="about" class="mb-20 fade-in">
-            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">About Me</h2>
+            <h2 class="text-5xl font-bold gradient-text mb-4 text-center">About Me</h2>
+            <p class="text-center text-teal-300 text-lg mb-12">AI/ML Engineer &middot; GenAI &amp; RAG Systems &middot; Bangalore, India</p>
             <div class="flex flex-col md:flex-row items-center md:space-x-12">
-                <!-- FIXED PROFILE IMAGE -->
                 <div class="md:w-1/3 mb-8 md:mb-0">
                     <div class="profile-img-container">
                         <div class="profile-img">
@@ -292,291 +225,356 @@
 
                 <div class="glass p-8 rounded-2xl shadow-2xl card-3d md:w-2/3">
                     <p class="text-gray-300 mb-4 leading-relaxed">
-                        Hello! I'm <span class="text-teal-400 font-semibold">Akhilesh Y Ragate</span>, currently living in Bangalore and looking forward to contributing to the software field in reputed companies.
+                        I'm <span class="text-teal-400 font-semibold">Akhilesh Y Ragate</span>, an AI/ML Engineer based in Bangalore, building production-ready Generative AI, machine learning, and backend systems for enterprise applications.
                     </p>
                     <p class="text-gray-300 mb-4 leading-relaxed">
-                        I am a recent graduate with a Bachelor of Engineering in Computer Science (CSE) specializing in <span class="text-blue-400 font-semibold">Artificial Intelligence & Machine Learning (AIML)</span>. My academic journey has equipped me with strong programming skills and a solid understanding of various technologies.
+                        My work centers on <span class="text-blue-400 font-semibold">RAG pipelines, vector databases, and LLM-powered applications</span> using Python, LangChain, and FastAPI — integrated into scalable services for enterprise cybersecurity, governance, compliance, and analytics workflows.
                     </p>
                     <p class="text-gray-300 mb-4 leading-relaxed">
-                        I have hands-on experience through internships in AI&ML, worked on projects like <span class="text-teal-400 font-semibold">"NHIT Road Distress Detection"</span> using computer vision. I am passionate about leveraging machine learning and AI to solve real-world problems.
+                        Before moving into GenAI and backend engineering, I built computer-vision and geospatial ML systems for infrastructure monitoring — including <span class="text-teal-400 font-semibold">road distress detection</span> using the Segment Anything Model, and satellite-based lay-by detection pipelines.
                     </p>
                     <p class="text-gray-300 leading-relaxed">
-                        Outside of my professional pursuits, I enjoy playing and watching <span class="text-teal-400">Cricket</span>, playing <span class="text-teal-400">Chess</span>, playing and watching <span class="text-teal-400">Football</span>, and listening to music.
+                        Outside of work, I play and watch <span class="text-teal-400">Cricket</span> and <span class="text-teal-400">Football</span>, play <span class="text-teal-400">Chess</span>, and listen to music.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
+        <!-- Experience -->
         <section id="experience" class="mb-20 fade-in">
             <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Experience</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="glass p-8 rounded-2xl shadow-2xl card-3d group">
+            <div class="space-y-8">
+
+                <div class="glass p-8 rounded-2xl shadow-2xl card-3d">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-white">AI&ML Applications Dev Trainee</h3>
-                            <p class="text-teal-300">PlanetEye Infra AI | Bangalore</p>
+                            <h3 class="text-2xl font-bold text-white">AI/ML Engineer</h3>
+                            <p class="text-teal-300">Kreesalis Technologies &middot; Current</p>
                         </div>
                     </div>
-                    <ul class="list-disc list-inside text-gray-300 space-y-3">
-                        <li>Developing an ML-driven satellite imagery analysis system to detect truck layby zones along highways, delivering geospatial visualizations and deployable inference pipelines.
-                        <li>Developed an AI/ML-based NDT solution for detecting wall hollowness and internal defects using acoustic & ultrasonic signals.</li>
-                        <li>leveraging CNN/CNN-LSTM models and advanced audio feature engineering; currently involved in Assessment Management.</li>
-                        <li>Worked on asset management project "NHIT Road Distress Detection" using AI&ML for detection of highway infrastructure, mainly developed pothole distress detection web and mobile app.</li>
-                        <li>Developed the app using SAM (segment-anything) ML model that detects potholes overlaying a mask to view the dimensions of distress detected, store Lat-long locations in live capture and upload in PDF option.</li>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2 leading-relaxed">
+                        <li>Develop AI-powered enterprise product applications for cybersecurity, governance, compliance, and business workflows.</li>
+                        <li>Design and build scalable REST APIs using Python and FastAPI for enterprise AI and data-driven applications.</li>
+                        <li>Integrate machine learning models into production backend services for real-time prediction, analytics, and automated workflows.</li>
+                        <li>Optimize ML inference using multi-layer caching with Valkey/Redis and in-memory model caching to improve service performance.</li>
+                        <li>Develop backend modules supporting regulatory filing, whistleblower intake, compliance management, and analytics dashboards.</li>
+                        <li>Work with PostgreSQL, Docker, Git, and asynchronous Python services in production environments, collaborating with frontend, AI, and DevOps teams.</li>
                     </ul>
                 </div>
-                <div class="glass p-8 rounded-2xl shadow-2xl card-3d group">
+
+                <div class="glass p-8 rounded-2xl shadow-2xl card-3d">
                     <div class="flex items-center mb-4">
                         <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
-                            </svg>
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-white">Python Data Engineer Trainee </h3>
-                            <p class="text-blue-300">Linkzie Technologies | Bangalore</p>
+                            <h3 class="text-2xl font-bold text-white">AI/ML &amp; Applications (GenAI) Developer Trainee</h3>
+                            <p class="text-blue-300">Planet Eye Infra AI (Mitcon Engineering) &middot; Bangalore</p>
                         </div>
                     </div>
-                    <ul class="list-disc list-inside text-gray-300 space-y-3">
-                        <li>Worked with Python, Pandas, PySpark, SQL, data warehousing, ETL/ELT processes, and cloud platforms like AWS and GCP.</li>
-                        <li><strong>Project 1:</strong> "Real-Time Charging Station Utilization and Performance Analytics" - Built serverless ETL pipeline on AWS using S3, Lambda, Glue, and Athena.</li>
-                        <li><strong>Project 2:</strong> "E-commerce Product Data Aggregator and Analyzer" - Python-based system for e-commerce data analysis through RESTful APIs.</li>
-                        <li>Implemented data cleaning, transformation, and schema unification to handle heterogeneous vendor data formats.Enabled insightful analytics such as price comparison, availability tracking, 
-                            and category-wise trends.Improved data accessibility and decision-making by providing a scalable, API-driven analytics layer.</li>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2 leading-relaxed">
+                        <li>Built end-to-end AI pipelines using Python, deep learning, computer vision, and geospatial data for infrastructure analytics.</li>
+                        <li>Processed 1,000+ geospatial and satellite image tiles for highway infrastructure monitoring and asset analytics.</li>
+                        <li>Developed FastAPI inference services and integrated AI predictions with Android and Web platforms.</li>
+                        <li>Generated GIS-ready KML files and geo-referenced reports for downstream infrastructure management.</li>
+                        <li>Improved segmentation performance to an IoU of 0.71 and Dice score of 0.83 using deep learning and Segment Anything.</li>
+                        <li>Designed DBSCAN-based GPS clustering to remove duplicate road-defect detections, and built CNN / CNN-LSTM models for Non-Destructive Testing using MFCC and spectrograms.</li>
+                        <li>Reduced false positives in satellite lay-by detection by 38% using spatial heuristics and clustering.</li>
+                    </ul>
+                </div>
+
+                <div class="glass p-8 rounded-2xl shadow-2xl card-3d">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Python Data Engineer Trainee</h3>
+                            <p class="text-purple-300">Linkzie Technologies &middot; Bangalore</p>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-300 space-y-2 leading-relaxed">
+                        <li>Designed serverless ETL pipelines using AWS S3, Lambda, Glue, Athena, and SQL.</li>
+                        <li>Built analytics datasets for EV charging station monitoring and downstream analytical workloads.</li>
+                        <li>Developed REST API-based ETL workflows for e-commerce product aggregation.</li>
+                        <li>Optimized Parquet data layouts for downstream analytics and machine learning workloads.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- Skills -->
+        <section id="skills" class="mb-20 fade-in">
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-lg font-semibold text-teal-300 mb-4">Languages</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Python</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">SQL</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">JavaScript</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">C</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Java</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-lg font-semibold text-teal-300 mb-4">Generative AI</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">RAG</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Vector Databases</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Embeddings</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">LangChain</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">LLM Applications</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Prompt Engineering</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-lg font-semibold text-teal-300 mb-4">AI / ML</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Machine Learning</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Computer Vision</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">CNN</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">YOLO</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Segment Anything (SAM)</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">TensorFlow</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Keras</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Scikit-learn</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-lg font-semibold text-teal-300 mb-4">Backend &amp; APIs</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">FastAPI</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Flask</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">REST APIs</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Async Python</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">JWT Authentication</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-lg font-semibold text-teal-300 mb-4">Databases &amp; Vector Search</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">PostgreSQL</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">MySQL</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">pgvector</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Qdrant</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Redis</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Valkey</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-lg font-semibold text-teal-300 mb-4">Cloud, DevOps &amp; Data Engineering</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">AWS (S3, Lambda, Glue, Athena)</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Azure</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">GCP</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Docker</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Git</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Pandas</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">PySpark</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">ETL Pipelines</span>
+                        <span class="skill-badge glass px-4 py-2 rounded-full text-sm font-medium text-gray-200 glow">Parquet Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="mb-20 fade-in">
+            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-full flex items-center justify-center mb-4">🏢</div>
+                    <h3 class="text-2xl font-semibold mb-2">Enterprise AI Compliance Platform</h3>
+                    <p class="text-gray-300 text-sm mb-4">Production backend APIs powering enterprise compliance and governance workflows, with scalable ML inference services accelerated by Redis/Valkey caching, plus analytics APIs and dashboard integrations.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">FastAPI</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">Redis/Valkey</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">Compliance &amp; GRC</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-full flex items-center justify-center mb-4">🔎</div>
+                    <h3 class="text-2xl font-semibold mb-2">RAG / Enterprise AI Applications</h3>
+                    <p class="text-gray-300 text-sm mb-4">LLM application workflows built on Retrieval-Augmented Generation, embeddings, and LangChain, with pgvector and Qdrant for vector-based retrieval — integrated into backend APIs and application workflows.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">RAG</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">LangChain</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">pgvector / Qdrant</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mb-4">🚧</div>
+                    <h3 class="text-2xl font-semibold mb-2">Road Distress Detection System</h3>
+                    <p class="text-gray-300 text-sm mb-4">AI models for pothole, crack, lane-marking, and roadside-asset detection using the Segment Anything Model, with GIS-ready KML outputs integrated with Web and Android platforms.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">Computer Vision</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">SAM</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">Smart Cities</span>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/Quantamaster/RoadGuard" target="_blank" class="text-sm font-medium text-yellow-400 hover:underline">GitHub &rarr;</a>
+                        <a href="https://ai.studio/apps/drive/1tGdz-pSLCFx9TQlYB64oAhsblhRGXGrF" target="_blank" class="text-sm font-medium text-green-400 hover:underline">Live App &rarr;</a>
+                        <a href="https://quantamaster.github.io/Akhilesh-Y-Ragate.github.io/Projects/roadguard-insights.html" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-blue-400 hover:underline">Insights &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-sky-400 to-blue-600 rounded-full flex items-center justify-center mb-4">🛰️</div>
+                    <h3 class="text-2xl font-semibold mb-2">Satellite Lay-by Detection</h3>
+                    <p class="text-gray-300 text-sm mb-4">Deep learning pipeline for detecting truck lay-by zones from satellite imagery, using geospatial heuristics and DBSCAN-based clustering to cut false positives by 38%.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">Geospatial ML</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">DBSCAN</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">Satellite Imagery</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center mb-4">🔊</div>
+                    <h3 class="text-2xl font-semibold mb-2">AI-based Non-Destructive Testing</h3>
+                    <p class="text-gray-300 text-sm mb-4">CNN and CNN-LSTM models for wall-hollowness and internal-defect detection using acoustic and ultrasonic signals, reaching an F1-score of 0.86 in noisy environments.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">CNN-LSTM</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">MFCC / Spectrograms</span>
+                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">Signal Processing</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center mb-4">🩺</div>
+                    <h3 class="text-2xl font-semibold mb-2">Kidney Stone Detection</h3>
+                    <p class="text-blue-300 mb-2 text-sm font-semibold">TensorFlow, Keras, CNN &middot; Published Research</p>
+                    <p class="text-gray-300 text-sm">Neural networks to detect kidney stones ranging from 5mm to 10cm in diameter; results published as a research paper.</p>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full flex items-center justify-center mb-4">😴</div>
+                    <h3 class="text-2xl font-semibold mb-2">Health Sensing &amp; Sleep Analysis</h3>
+                    <p class="text-teal-300 mb-2 text-sm font-semibold">Python, Signal Processing, AI/ML</p>
+                    <p class="text-gray-300 text-sm mb-3">Analysis of physiological signals (SpO2, nasal airflow, thoracic movement) for detecting sleep breathing irregularities.</p>
+                    <a href="https://github.com/Quantamaster/Health-Sensing" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-semibold text-sm">View on GitHub &rarr;</a>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center mb-4">📈</div>
+                    <h3 class="text-2xl font-semibold mb-2">Stock Market Price Prediction</h3>
+                    <p class="text-green-300 mb-2 text-sm font-semibold">LSTM, Deep Learning, Time-Series</p>
+                    <p class="text-gray-300 text-sm mb-3">Predicts stock prices using LSTM networks trained on historical financial data with performance evaluation metrics.</p>
+                    <a href="https://github.com/Quantamaster/stock-Market-Price-Prediction-using-ML" target="_blank" class="text-green-400 hover:text-green-300 font-semibold text-sm">View on GitHub &rarr;</a>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mb-4">🔍</div>
+                    <h3 class="text-2xl font-semibold mb-2">Smart Search System (LLM)</h3>
+                    <p class="text-purple-300 mb-2 text-sm font-semibold">NLP, LLM, Information Retrieval</p>
+                    <p class="text-gray-300 text-sm mb-3">Intelligent search system that suggests relevant courses using large language models and semantic similarity.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/Quantamaster/Search-System-LLM-" target="_blank" class="text-purple-400 hover:text-purple-300 font-semibold text-sm">GitHub &rarr;</a>
+                        <a href="https://ai.studio/apps/drive/1OZ6O_TCD3DJ6rLg2Ke_PStHaO_jhoFN2" target="_blank" class="text-green-400 hover:underline font-medium text-sm">Live App &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-red-500 rounded-full flex items-center justify-center mb-4">💨</div>
+                    <h3 class="text-2xl font-semibold mb-2">Air Quality Monitoring System</h3>
+                    <p class="text-yellow-300 mb-2 text-sm font-semibold">Data Analytics, Visualization, Python</p>
+                    <p class="text-gray-300 text-sm mb-3">AQI data collection and animated visualization system to analyze pollution trends over time.</p>
+                    <a href="https://github.com/Quantamaster/Air-Quality" target="_blank" class="text-yellow-400 hover:text-yellow-300 font-semibold text-sm">View on GitHub &rarr;</a>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-rose-600 rounded-full flex items-center justify-center mb-4">🛒</div>
+                    <h3 class="text-2xl font-semibold mb-2">Ecommerce Data Analyzer</h3>
+                    <p class="text-pink-300 mb-2 text-sm font-semibold">Python, Data Analysis, Visualization</p>
+                    <p class="text-gray-300 text-sm mb-3">End-to-end ecommerce analytics system that collects, cleans, and analyzes product data for sales trends, pricing insights, and performance metrics.</p>
+                    <a href="https://github.com/Quantamaster/Ecommerce_Data_Analyzer" target="_blank" class="text-pink-400 hover:text-pink-300 font-semibold text-sm">View on GitHub &rarr;</a>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-lime-500 rounded-full flex items-center justify-center mb-4">⚡</div>
+                    <h3 class="text-2xl font-semibold mb-2">Electric Vehicle (EV) Data Analytics</h3>
+                    <p class="text-emerald-300 mb-2 text-sm font-semibold">Data Analytics, Machine Learning, Sustainability</p>
+                    <p class="text-gray-300 text-sm mb-3">Data-driven analysis of EV performance including energy consumption, range estimation, and efficiency trends using real-world datasets and a serverless ETL pipeline.</p>
+                    <a href="https://github.com/Quantamaster/serverless-ev-etl-pipeline" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold text-sm">View on GitHub &rarr;</a>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-sky-400 to-indigo-600 rounded-full flex items-center justify-center mb-4">🌍</div>
+                    <h3 class="text-2xl font-semibold mb-2">Earth Observation &amp; Geospatial Analytics</h3>
+                    <p class="text-sky-300 mb-2 text-sm font-semibold">Remote Sensing, Satellite Imagery, AI/ML</p>
+                    <p class="text-gray-300 text-sm mb-3">Satellite-based environmental analysis using Sentinel-2 imagery and ESA WorldCover to study land-use patterns and air-shed dynamics with geospatial ML techniques.</p>
+                    <a href="https://github.com/Quantamaster/Earth-Observation" target="_blank" class="text-sky-400 hover:text-sky-300 font-semibold text-sm">View on GitHub &rarr;</a>
+                </div>
+
+                <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2">Online Voting System</h3>
+                    <p class="text-purple-300 mb-2 text-sm font-semibold">Database Management Systems (PHP, SQL)</p>
+                    <p class="text-gray-300 text-sm">Voting system using a PHP frontend and SQL backend for candidate elections.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
         <section id="education" class="mb-20 fade-in">
             <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Education</h2>
             <div class="max-w-3xl mx-auto">
                 <div class="glass p-8 rounded-2xl shadow-2xl card-3d">
                     <div class="flex items-start">
                         <div class="w-16 h-16 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                            </svg>
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
                         </div>
                         <div>
-                            <h3 class="text-2xl font-bold text-white mb-2">Bachelor of Engineering in Computer Science (CSE)</h3>
-                            <p class="text-teal-300 mb-2 font-semibold">Don Bosco Institute Of Technology | Bangalore</p>
-                            <p class="text-gray-300 mb-1">Specialization in Artificial Intelligence & Machine Learning (AI ML)</p>
+                            <h3 class="text-2xl font-bold text-white mb-2">Bachelor of Engineering in Computer Science</h3>
+                            <p class="text-teal-300 mb-2 font-semibold">Don Bosco Institute of Technology &middot; Bangalore</p>
+                            <p class="text-gray-300 mb-1">Specialization in Artificial Intelligence &amp; Machine Learning (AI &amp; ML)</p>
                             <div class="flex items-center mt-3 flex-wrap gap-3">
-                                <span class="bg-teal-500 text-white px-4 py-1 rounded-full text-sm font-semibold">CGPA: 8.5</span>
-                                <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">Graduation: 2024</span>
+                                <span class="bg-teal-500 text-white px-4 py-1 rounded-full text-sm font-semibold">CGPA: 8.5/10</span>
+                                <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">2020 – 2024</span>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                        <h3 class="text-xl font-bold text-white mb-4">Certifications</h3>
+                        <ul class="text-gray-300 space-y-2 text-sm">
+                            <li>Oracle Cloud Infrastructure – Generative AI Professional (2025)</li>
+                            <li>Google Cloud – Responsible AI</li>
+                            <li>Microsoft Azure Fundamentals</li>
+                            <li>Cisco Python Essentials</li>
+                        </ul>
+                    </div>
+                    <div class="glass p-6 rounded-2xl shadow-2xl card-3d">
+                        <h3 class="text-xl font-bold text-white mb-4">Achievements</h3>
+                        <ul class="text-gray-300 space-y-2 text-sm">
+                            <li>Published research paper on Kidney Stone Detection using Neural Networks.</li>
+                            <li>Solved 250+ Data Structures &amp; Algorithms problems.</li>
+                            <li>Participated in multiple AI and Generative AI Hackathons.</li>
+                            <li>Member, Computer Society of India (CSI).</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="mb-20 fade-in">
-            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Skills</h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-teal-300 glow">Python</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-blue-300 glow">C</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-teal-300 glow">SQL</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-blue-300 glow">Java</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-teal-300 glow">GCP</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-blue-300 glow">Linux</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-purple-300 glow">PyCharm</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-teal-300 glow">VS Code</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-yellow-300 glow">Jupyter</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-teal-300 glow">Android Studio</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-blue-300 glow">GenAI</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-blue-300 glow">FastAPI</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-purple-300 glow">Scikit-Learn</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-teal-300 glow">OpenCV</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-blue-300 glow">TensorFlow</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-purple-300 glow">Keras</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-teal-300 glow">Deep Learning</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-purple-300 glow">LLM</span>
-                <span class="skill-badge glass px-6 py-3 rounded-full text-lg font-semibold text-blue-300 glow">VectorDB</span>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="mb-20 fade-in">
-            <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Projects</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mb-4">🚧
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-2">RoadGuard</h3>
-                    <p class="text-gray-300 text-sm mb-4">AI-powered road distress detection system using computer vision and Segment Anything Model (SAM) to detect, segment, and geo-tag potholes for smart infrastructure monitoring.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">Computer Vision</span>
-                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">SAM</span>
-                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">AI Deployment</span>
-                        <span class="px-3 py-1 text-xs rounded-full bg-white/10">Smart Cities</span>
-                    </div>
-                    <div class="flex gap-4 mt-4">
-                        <a href="https://github.com/Quantamaster/RoadGuard"
-                            target="_blank"
-                            class="text-sm font-medium text-yellow-400 hover:underline">
-                            GitHub →
-                        </a>
-                        <a href="https://ai.studio/apps/drive/1tGdz-pSLCFx9TQlYB64oAhsblhRGXGrF"
-                            target="_blank"
-                            class="text-sm font-medium text-green-400 hover:underline">
-                            Live App →
-                        </a>
-                        <a href="https://quantamaster.github.io/Akhilesh-Y-Ragate.github.io/Projects/roadguard-insights.html"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-sm font-medium text-blue-400 hover:underline">
-                            Insights →
-                        </a>
-                    </div>
-                </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Online Voting System</h3>
-                    <p class="text-purple-300 mb-3 text-sm font-semibold">Database Management Systems (PHP, SQL)</p>
-                    <p class="text-gray-300">Voting system using PHP frontend and SQL backend for candidate election.</p>
-                </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Kidney Stone Detection</h3>
-                    <p class="text-blue-300 mb-3 text-sm font-semibold">AI/ML (TensorFlow, Keras, CNN)</p>
-                    <p class="text-gray-300">Neural networks to detect kidney stones ranging from 5mm to 10cm in diameter.</p>
-                </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M4 14s1-4 8-4 8 4 8 4M12 10V3"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Health Sensing & Sleep Analysis</h3>
-                    <p class="text-teal-300 mb-3 text-sm font-semibold"> Python, Signal Processing, AI/ML</p>
-                    <p class="text-gray-300">Analysis of physiological signals (SpO₂, nasal airflow, thoracic movement) for detecting sleep breathing irregularities.</p>
-                    <a href="https://github.com/Quantamaster/Health-Sensing"
-                        target="_blank"
-                        class="inline-block mt-4 text-cyan-400 hover:text-cyan-300 font-semibold">
-                        View on GitHub →
-                
-                    </a>
-                </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-600 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M3 3v18h18M7 15l3-3 4 4 5-6"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Stock Market Price Prediction</h3>
-                    <p class="text-green-300 mb-3 text-sm font-semibold">LSTM, Deep Learning, Time-Series</p>
-                    <p class="text-gray-300">Predicts stock prices using LSTM networks trained on historical financial data with performance evaluation metrics.</p>
-                    <a href="https://github.com/Quantamaster/stock-Market-Price-Prediction-using-ML"
-                        target="_blank"
-                        class="inline-block mt-4 text-green-400 hover:text-green-300 font-semibold">
-                        View on GitHub →
-                    </a>
-                </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Smart Search System (LLM)</h3>
-                    <p class="text-purple-300 mb-3 text-sm font-semibold">NLP, LLM, Information Retrieval</p>
-                    <p class="text-gray-300">Intelligent search system that suggests relevant courses using large language models and semantic similarity.</p>
-                    <a href="https://github.com/Quantamaster/Search-System-LLM-"
-                        target="_blank"
-                        class="inline-block mt-4 text-purple-400 hover:text-purple-300 font-semibold">
-                        View on GitHub →
-                    </a>
-                    <a href="https://ai.studio/apps/drive/1OZ6O_TCD3DJ6rLg2Ke_PStHaO_jhoFN2"
-                        target="_blank"
-                        class="text-sm font-medium text-green-400 hover:underline">
-                        Live App →
-                    </a>
-                </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-red-500 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M12 3v18m9-9H3"/></svg>
-                    </div><h3 class="text-2xl font-bold text-white mb-2">Air Quality Monitoring System</h3>
-                    <p class="text-yellow-300 mb-3 text-sm font-semibold">Data Analytics, Visualization, Python</p>
-                    <p class="text-gray-300">AQI data collection and animated visualization system to analyze pollution trends over time.</p>
-                    <a href="https://github.com/Quantamaster/Air-Quality"
-                        target="_blank"
-                        class="inline-block mt-4 text-yellow-400 hover:text-yellow-300 font-semibold">
-                        View on GitHub →
-                    </a>
-                </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-rose-600 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 7H19M7 13l-4-8M10 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Ecommerce Data Analyzer</h3>
-                    <p class="text-pink-300 mb-3 text-sm font-semibold">Python, Data Analysis, Visualization</p>
-                    <p class="text-gray-300">End-to-end ecommerce analytics system that collects, cleans, and analyzes product data to extract sales trends, pricing insights, and performance metrics.</p>
-                    <a href="https://github.com/Quantamaster/Ecommerce_Data_Analyzer"
-                        target="_blank"
-                        class="inline-block mt-4 text-pink-400 hover:text-pink-300 font-semibold">
-                        View on GitHub →
-                    </a>
-                </div>
-                <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
-                    <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-lime-500 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Electric Vehicle (EV) Data Analytics</h3>
-                    <p class="text-emerald-300 mb-3 text-sm font-semibold">Data Analytics, Machine Learning, Sustainability</p>
-                    <p class="text-gray-300">Data-driven analysis of electric vehicle performance including energy consumption,range estimation, and efficiency trends using real-world datasets.</p>
-                    <a href="https://github.com/Quantamaster/serverless-ev-etl-pipeline"
-                        target="_blank"
-                        class="inline-block mt-4 text-emerald-400 hover:text-emerald-300 font-semibold">
-                        View on GitHub →
-                    </a>
-                </div>
-            <div class="glass p-6 rounded-2xl shadow-2xl card-3d cursor-pointer">
-                <div class="w-12 h-12 bg-gradient-to-br from-sky-400 to-indigo-600 rounded-full flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"d="M12 2l9 7-9 7-9-7 9-7zM3 9v6l9 7 9-7V9"/>
-                    </svg>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-2">Earth Observation & Geospatial Analytics</h3>
-                <p class="text-sky-300 mb-3 text-sm font-semibold">Remote Sensing, Satellite Imagery, AI/ML</p>
-                <p class="text-gray-300">Satellite-based environmental analysis using Sentinel-2 imagery and ESA WorldCovert to study land-use patterns and air-shed dynamics with geospatial ML techniques.</p>
-                <a href="https://github.com/Quantamaster/Earth-Observation"
-                    target="_blank"
-                    class="inline-block mt-4 text-sky-400 hover:text-sky-300 font-semibold">
-                    View on GitHub →
-                </a>
-            </div>
-
-
-
-
-            </div>
-        </section>
-
-        <!-- Contact Section -->
+        <!-- Contact -->
         <section id="contact" class="mb-20 fade-in">
             <h2 class="text-5xl font-bold gradient-text mb-12 text-center">Contact Me</h2>
             <div class="glass p-10 rounded-2xl shadow-2xl max-w-3xl mx-auto">
@@ -585,60 +583,45 @@
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <a href="mailto:akhileshragate@gmail.com" class="bg-gradient-to-r from-teal-500 to-blue-500 hover:from-teal-600 hover:to-blue-600 text-white font-bold py-4 px-6 rounded-xl text-center transition duration-300 shadow-lg flex items-center justify-center btn-pulse">
-                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
+                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         Email Me
                     </a>
                     <a href="https://linkedin.com/in/akhilesh-y-ragate-a80460242" target="_blank" class="glass hover:bg-blue-600 text-white font-bold py-4 px-6 rounded-xl text-center transition duration-300 shadow-lg flex items-center justify-center">
-                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         LinkedIn
                     </a>
                     <a href="https://github.com/Quantamaster" target="_blank" class="glass hover:bg-gray-700 text-white font-bold py-4 px-6 rounded-xl text-center transition duration-300 shadow-lg flex items-center justify-center">
-                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                         GitHub
                     </a>
                     <a href="https://aiwantsml.blogspot.com/" target="_blank" class="glass hover:bg-orange-600 text-white font-bold py-4 px-6 rounded-xl text-center transition duration-300 shadow-lg flex items-center justify-center">
-                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
-                        </svg>
+                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
                         Blog
                     </a>
                 </div>
                 <div class="mt-8 text-center">
                     <p class="text-gray-300 text-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                        </svg>
-                        9686197113
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        +91-9686197113
                     </p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="glass py-8 text-center text-gray-400 relative z-10">
-        <p class="mb-2">&copy; 2025 Akhilesh Y Ragate. All rights reserved.</p>
+        <p class="mb-2">&copy; 2026 Akhilesh Y Ragate. All rights reserved.</p>
         <p>Built with <span class="text-red-500 icon-bounce inline-block">&hearts;</span> and modern web technologies.</p>
     </footer>
 
     <script>
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // Active navigation highlighting
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
 
@@ -651,7 +634,6 @@
                     current = section.getAttribute('id');
                 }
             });
-
             navLinks.forEach(link => {
                 link.classList.remove('text-teal-300');
                 if (link.getAttribute('href').substring(1) === current) {
@@ -660,7 +642,6 @@
             });
         });
 
-        // Progress bar
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -668,23 +649,14 @@
             document.getElementById('progressBar').style.width = scrolled + '%';
         });
 
-        // Scroll reveal animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -100px 0px' };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, observerOptions);
-
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // Particle background
         const particleContainer = document.getElementById('particleContainer');
         function createParticle() {
             const particle = document.createElement('div');
@@ -696,35 +668,10 @@
             particle.style.top = Math.random() * 100 + '%';
             particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
             particleContainer.appendChild(particle);
-
-            setTimeout(() => {
-                particle.remove();
-            }, 20000);
+            setTimeout(() => particle.remove(), 20000);
         }
-
         setInterval(createParticle, 300);
-
-        // Initialize particles
-        for (let i = 0; i < 20; i++) {
-            setTimeout(createParticle, i * 200);
-        }
+        for (let i = 0; i < 20; i++) setTimeout(createParticle, i * 200);
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
